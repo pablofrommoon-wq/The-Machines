@@ -18,7 +18,7 @@ export async function GET() {
       present: !!apiKey,
       isPlaceholder: apiKey === 'your_openai_api_key_here' || apiKey === '',
       preview: apiKey ? `${apiKey.substring(0, 7)}...${apiKey.substring(apiKey.length - 4)}` : 'None',
-      length: apiKey?.length || 0
+      length: apiKey ? apiKey.length : 0
     },
     timestamp: new Date().toISOString()
   });
